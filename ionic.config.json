@@ -1,0 +1,7 @@
+{
+  "name": "TaxPark",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
