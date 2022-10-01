@@ -12,11 +12,11 @@
   <div class="container">
     <!-- btn-map -->
     <ion-button (click)="createMap()" expand="block" color="success">
-      <ion-icon name="map-sharp"></ion-icon> Crear Mapa
+      <ion-icon name="map-sharp" slot="start"></ion-icon> Ver Mapa
     </ion-button>
     <!-- btn-map -->
     <ion-button (click)="Destroy()" expand="block" color="danger">
-      <ion-icon name="map-sharp"></ion-icon> Quitar Mapa
+      <ion-icon name="map-sharp" slot="start"></ion-icon> Cerrar Mapa
     </ion-button>
     <!-- mapa -->
     <capacitor-google-map #map></capacitor-google-map>
