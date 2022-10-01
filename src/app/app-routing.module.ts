@@ -19,6 +19,14 @@ const routes: Routes = [
   {
     path: 'lobby',
     loadChildren: () => import('./lobby/lobby.module').then( m => m.LobbyPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
   }
 ];
 

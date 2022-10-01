@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+      <ion-grid style="margin-top: 1rem;">
+        <ion-row>
+          <ion-col size="6" class="ion-text-center">  
+            <ion-button shape="round" color="" (click)="loadComponente('cliente')">
+              <ion-icon name="man" slot="start"></ion-icon>
+              Como cliente</ion-button>
+          </ion-col>
+          <ion-col size="6" class="ion-text-center">  
+            <ion-button shape="round" color="" (click)="loadComponente('taxista')">
+              <ion-icon name="car-sport-sharp" slot="start"></ion-icon>
+              Como taxista</ion-button>
+          </ion-col>
+          <ion-col size="12" class="ion-text-center">
+            <ng-template #contenedor></ng-template>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+  </div>
+</ion-content>

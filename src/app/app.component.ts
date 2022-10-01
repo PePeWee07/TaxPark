@@ -6,9 +6,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   public appPages = [
-    // { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
-    { title: 'Inico', url: '/lobby', icon: 'archive' },
+    { title: 'Inico', url: '/lobby', icon: 'home' },
     { title: 'Map', url: '/map', icon: 'map' },
+    { title: 'Login', url: '/login', icon: 'person' },
+    { title: 'Register', url: '/register', icon: 'earth' },
+    // { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
     // { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
     // { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
     // { title: 'Trash', url: '/folder/Trash', icon: 'trash' },
