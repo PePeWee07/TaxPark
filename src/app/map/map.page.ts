@@ -108,11 +108,11 @@ export class MapPage implements OnInit {
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
-        // Taxi 4
+        // Taxi 4 41.53451521587608, 2.4439985736890866
         {
           coordinate: {
-            lat: -2.1931493160511333,
-            lng: -79.88741481057262
+            lat: 4 41.53451521587608,
+            lng: 2.4439985736890866
           },
           title: 'Taxista',
           iconUrl: '../../assets/icon/taxi.png',
