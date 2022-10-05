@@ -75,34 +75,41 @@ export class MapPage implements OnInit {
   }
 
   //metodo para markar taxis
+//   41.54246192157841, 2.4219310322348035
+// 41.544298582619156, 2.424745846070405
+// 41.54475773972806, 2.4267306506980733
+// 41.54273202218488, 2.4390364400797253
+// 41.54964621043261, 2.435535966463657
+// 41.55142865470472, 2.445459989601995
+//41.553238055439294, 2.4453156401745284
   async MarkTaxis(){
     try {
       const marksTaxi : Marker[] = [
-        // Taxi 1
+        // Taxi 1 41.539976944193576, 2.425792379419539
         {
           coordinate: {
-            lat: -2.1572979418568607,
-            lng: -79.87951838517485
+            lat: 41.539976944193576,
+            lng: 2.425792379419539
           },
           title: 'Taxista',
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
-        // Taxi 2 
+        // Taxi 2 41.53622228636761, 2.4223640805172035
         {
           coordinate: {
-            lat: -2.191777030369763,
-            lng: -79.90149104316366
+            lat: 41.53622228636761,
+            lng: 2.4223640805172035
           },
           title: 'Taxista',
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
-        // Taxi 3
+        // Taxi 3 41.53248397057798, 2.4435759759484283
         {
           coordinate: {
-            lat: -2.1485493916001914,
-            lng: -79.90629756160939
+            lat: 41.53248397057798,
+            lng: 2.4435759759484283
           },
           title: 'Taxista',
           iconUrl: '../../assets/icon/taxi.png',
@@ -111,7 +118,7 @@ export class MapPage implements OnInit {
         // Taxi 4 41.53451521587608, 2.4439985736890866
         {
           coordinate: {
-            lat: 4 41.53451521587608,
+            lat: 41.53451521587608,
             lng: 2.4439985736890866
           },
           title: 'Taxista',
