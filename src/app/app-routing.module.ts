@@ -31,6 +31,14 @@ const routes: Routes = [
   {
     path: 'request',
     loadChildren: () => import('./request/request.module').then( m => m.RequestPageModule)
+  },
+  {
+    path: 'client-view',
+    loadChildren: () => import('./client-view/client-view.module').then( m => m.ClientViewPageModule)
+  },
+  {
+    path: 'taxi-view',
+    loadChildren: () => import('./taxi-view/taxi-view.module').then( m => m.TaxiViewPageModule)
   }
 ];
 

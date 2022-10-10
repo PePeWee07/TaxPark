@@ -68,6 +68,7 @@ export class MapPage implements OnInit {
       iconUrl: '../../assets/icon/localizacion.png',
       draggable: false,
     }
+    
     await this.newMap.addMarker(myMark);
     } catch (error) {
       console.log('ERROR: ', error);
@@ -94,7 +95,7 @@ export class MapPage implements OnInit {
             lat: parseFloat(this.latitud),
             lng: parseFloat(this.longitud)
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -103,7 +104,7 @@ export class MapPage implements OnInit {
             lat: 41.54246192157841,
             lng: 2.4219310322348035
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -112,7 +113,7 @@ export class MapPage implements OnInit {
             lat: 41.544298582619156,
             lng: 2.424745846070405
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -121,7 +122,7 @@ export class MapPage implements OnInit {
             lat: 41.54475773972806,
             lng: 2.4267306506980733
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -130,7 +131,7 @@ export class MapPage implements OnInit {
             lat: 41.54273202218488,
             lng: 2.4390364400797253
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -139,7 +140,7 @@ export class MapPage implements OnInit {
             lat: 41.54964621043261,
             lng: 2.435535966463657
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -148,7 +149,7 @@ export class MapPage implements OnInit {
             lat: 41.55142865470472,
             lng: 2.445459989601995
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -157,7 +158,7 @@ export class MapPage implements OnInit {
             lat: 41.553238055439294,
             lng: 2.4453156401745284
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -167,7 +168,7 @@ export class MapPage implements OnInit {
             lat: 41.539976944193576,
             lng: 2.425792379419539
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -177,7 +178,7 @@ export class MapPage implements OnInit {
             lat: 41.53622228636761,
             lng: 2.4223640805172035
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -187,7 +188,7 @@ export class MapPage implements OnInit {
             lat: 41.53248397057798,
             lng: 2.4435759759484283
           },
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -198,19 +199,19 @@ export class MapPage implements OnInit {
             lng: 2.4439985736890866,
           },
 
-          title: String(this.numTax),
+          title: 'Taxis: ' + String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
       ]
 
       await this.newMap.addMarkers(marksTaxi);
-      this.newMap.removeMarker
     } catch (error) {
       console.log('ERROR: ', error);
       alert('No se pudo markar las ubicaciónes de taxis')
     }
   }
+
 
   //Elimino la vista del mapa
   async Destroy(){

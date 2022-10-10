@@ -11,6 +11,8 @@ export class AppComponent {
     { title: 'Login', url: '/login', icon: 'person' },
     { title: 'Registro', url: '/register', icon: 'earth' },
     { title: 'Solicitar', url: '/request', icon: 'car' },
+    { title: 'Tu Clientes', url: '/client-view', icon: 'warning' },
+    { title: 'Tu Taxi', url: '/taxi-view', icon: 'warning' },
     // { title: 'Inbox', url: '/folder/Inbox', icon: 'mail' },
     // { title: 'Favorites', url: '/folder/Favorites', icon: 'heart' },
     // { title: 'Archived', url: '/folder/Archived', icon: 'archive' },
