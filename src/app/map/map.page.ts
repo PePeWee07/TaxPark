@@ -1,5 +1,6 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GoogleMap, Marker} from '@capacitor/google-maps';
+import { MarkerCallbackData } from '@capacitor/google-maps/dist/typings/definitions';
 import { environment } from 'src/environments/environment';
 import { GpsService } from "../services/gps.service";
 
@@ -74,24 +75,99 @@ export class MapPage implements OnInit {
     }
   }
 
+  // Variable Num taxis
+  numTax:  Number = 0;
+  //metodo de parada Randon
+  NumberParking(){
+    setInterval(() => {
+      console.log("NumTax: ", this.numTax)
+      return this.numTax = Math.floor(Math.random() * (10 - 1) + 1)
+    }, 5000);
+  }
+
   //metodo para markar taxis
-//   41.54246192157841, 2.4219310322348035
-// 41.544298582619156, 2.424745846070405
-// 41.54475773972806, 2.4267306506980733
-// 41.54273202218488, 2.4390364400797253
-// 41.54964621043261, 2.435535966463657
-// 41.55142865470472, 2.445459989601995
-//41.553238055439294, 2.4453156401745284
   async MarkTaxis(){
     try {
       const marksTaxi : Marker[] = [
+        {
+          coordinate: {
+            lat: parseFloat(this.latitud),
+            lng: parseFloat(this.longitud)
+          },
+          title: String(this.numTax),
+          iconUrl: '../../assets/icon/taxi.png',
+          draggable: true,
+        },
+        {
+          coordinate: {
+            lat: 41.54246192157841,
+            lng: 2.4219310322348035
+          },
+          title: String(this.numTax),
+          iconUrl: '../../assets/icon/taxi.png',
+          draggable: true,
+        },
+        {
+          coordinate: {
+            lat: 41.544298582619156,
+            lng: 2.424745846070405
+          },
+          title: String(this.numTax),
+          iconUrl: '../../assets/icon/taxi.png',
+          draggable: true,
+        },
+        {
+          coordinate: {
+            lat: 41.54475773972806,
+            lng: 2.4267306506980733
+          },
+          title: String(this.numTax),
+          iconUrl: '../../assets/icon/taxi.png',
+          draggable: true,
+        },
+        {
+          coordinate: {
+            lat: 41.54273202218488,
+            lng: 2.4390364400797253
+          },
+          title: String(this.numTax),
+          iconUrl: '../../assets/icon/taxi.png',
+          draggable: true,
+        },
+        {
+          coordinate: {
+            lat: 41.54964621043261,
+            lng: 2.435535966463657
+          },
+          title: String(this.numTax),
+          iconUrl: '../../assets/icon/taxi.png',
+          draggable: true,
+        },
+        {
+          coordinate: {
+            lat: 41.55142865470472,
+            lng: 2.445459989601995
+          },
+          title: String(this.numTax),
+          iconUrl: '../../assets/icon/taxi.png',
+          draggable: true,
+        },
+        {
+          coordinate: {
+            lat: 41.553238055439294,
+            lng: 2.4453156401745284
+          },
+          title: String(this.numTax),
+          iconUrl: '../../assets/icon/taxi.png',
+          draggable: true,
+        },
         // Taxi 1 41.539976944193576, 2.425792379419539
         {
           coordinate: {
             lat: 41.539976944193576,
             lng: 2.425792379419539
           },
-          title: 'Taxista',
+          title: String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -101,7 +177,7 @@ export class MapPage implements OnInit {
             lat: 41.53622228636761,
             lng: 2.4223640805172035
           },
-          title: 'Taxista',
+          title: String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -111,7 +187,7 @@ export class MapPage implements OnInit {
             lat: 41.53248397057798,
             lng: 2.4435759759484283
           },
-          title: 'Taxista',
+          title: String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
@@ -119,14 +195,17 @@ export class MapPage implements OnInit {
         {
           coordinate: {
             lat: 41.53451521587608,
-            lng: 2.4439985736890866
+            lng: 2.4439985736890866,
           },
-          title: 'Taxista',
+
+          title: String(this.numTax),
           iconUrl: '../../assets/icon/taxi.png',
           draggable: true,
         },
       ]
+
       await this.newMap.addMarkers(marksTaxi);
+      this.newMap.removeMarker
     } catch (error) {
       console.log('ERROR: ', error);
       alert('No se pudo markar las ubicaciónes de taxis')
@@ -140,6 +219,7 @@ export class MapPage implements OnInit {
   
   ngOnInit() {
     this.Geolocation();
+    this.NumberParking();
   }
 
 }
