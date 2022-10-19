@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mapa</ion-title>
+    <ion-buttons slot="start">
+      <!-- <ion-back-button defaultHref="/"></ion-back-button> -->
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <!-- btn-map -->
+    <ion-button (click)="createMap()" expand="block" color="success">
+      <ion-icon name="map-sharp" slot="start"></ion-icon> Ver Mapa
+    </ion-button>
+    <!-- btn-map -->
+    <ion-button (click)="Destroy()" expand="block" color="danger">
+      <ion-icon name="map-sharp" slot="start"></ion-icon> Cerrar Mapa
+    </ion-button>
+    <!-- mapa -->
+    <capacitor-google-map #map></capacitor-google-map>
+  </div>
+</ion-content>

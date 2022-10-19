@@ -1,0 +1,30 @@
+.container {
+    margin-top: -20px;
+    width: 100%;
+    height: 110vh;
+    background: url('https://img.remediosdigitales.com/16035e/33017730995_3d1db79301_b/1366_2000.jpg');
+    background-size: cover;
+    background-position:center;
+    background-attachment: fixed;
+}
+
+h2,h5{
+    color: black;
+}
+
+a,h2{
+    font-weight: bold;
+}
+
+ion-grid{
+    position: absolute;
+    margin-top: 3rem;
+    background-color: rgb(249, 252, 255, 0.5);
+    margin-right: 10%;
+    margin-left: 10%;
+    border-radius: 5%;
+}
+
+ion-icon{
+    color: black;
+}
