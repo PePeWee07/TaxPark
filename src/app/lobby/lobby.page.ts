@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { auth } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-lobby',
@@ -17,7 +19,19 @@ export class LobbyPage implements OnInit {
     this.router.navigateByUrl('/register');
   }
 
+  logout(){
+    auth.signOut().then(() => this.router.navigateByUrl('/login'))
+  }
+
+  validar: string;
+  validacion(){
+    auth.onAuthStateChanged((user) => {
+      return (user) ? this.validar = user.photoURL : console.log('Sin logueo');
+    });
+  }
+
   ngOnInit() {
+    this.validacion();
   }
 
 }

@@ -17,21 +17,21 @@
         <ion-col>
           <ion-item style="padding: 10px;">
             <ion-label position="floating">Calle 1</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="calle1"></ion-input>
           </ion-item>
           <ion-item style="padding: 10px;">
             <ion-label position="floating">Calle 2</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="calle2"></ion-input>
           </ion-item>
           <ion-item style="padding: 10px;">
             <ion-label position="floating">Numero calle</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input type="text" [(ngModel)]="numeroDeCalle"></ion-input>
           </ion-item>
 
           <div class="" *ngIf="hiddenHour == 1">
             <ion-item style="padding: 10px;">
               <ion-label position="floating">Hora</ion-label>
-              <ion-input type="text" value="00:00"></ion-input>
+              <ion-input type="text" [(ngModel)]="hora"></ion-input>
               <ion-button color="warning" slot="end" style="margin-top: 15px;" (click)="showhour()">Now!</ion-button>
             </ion-item>
           </div>
@@ -39,14 +39,14 @@
           <div class="" *ngIf="hiddenHour == 2">
             <ion-item style="padding: 10px;">
               <ion-label position="floating">Hora</ion-label>
-              <ion-input type="text" [value]="timeNow"></ion-input>
+              <ion-input type="text" [(ngModel)]="timeNow"></ion-input>
               <ion-button color="warning" slot="end" style="margin-top: 15px;" (click)="showhour2()">Select!</ion-button>
             </ion-item>
           </div>
 
         </ion-col>
         <ion-col size="12" class="ion-text-center">
-          <ion-button color="success" shape="round" (click)="go()">Solicitar</ion-button>
+          <ion-button color="success" shape="round" (click)="solicitarRegister()">Solicitar</ion-button>
         </ion-col>
         <ion-col size="12" class="ion-text-center">
           <ion-button color="danger" shape="round">Cancelar</ion-button>

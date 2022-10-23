@@ -13,31 +13,61 @@
       <ion-row>
         <ion-col size="12"> <h2 class="ion-text-center">Pedidos de Taxis</h2> </ion-col>
 
-        <ion-col size="12" class="ion-text-center">
+        <!-- <ion-col size="12" class="ion-text-center">
           <ion-item style="padding: 10px;">
             <ion-label>Nueva Alerta!</ion-label>
             <ion-button class="ion-text-center" color="warning" slot="end" style="margin-top: 5px;" (click)="loadComponente('perfil')">
               <ion-icon name="warning" slot=""></ion-icon>
             </ion-button>
           </ion-item>
-        </ion-col>
+        </ion-col> -->
 
-        <ion-col size="12" class="ion-text-center">
-          <ion-item style="padding: 10px;">
-            <ion-label>Nueva Alerta!</ion-label>
-            <ion-button class="ion-text-center" color="warning" slot="end" style="margin-top: 5px;" (click)="loadComponente('perfil')">
-              <ion-icon name="warning" slot=""></ion-icon>
-            </ion-button>
-          </ion-item>
-        </ion-col>
+         
+        <ion-col size="6" class="ion-text-center" *ngFor="let item of datosFicha; let i = index">
+          <ion-card>
+            <ion-card-header>
+              <ion-card-title>Nueva Alerta</ion-card-title>
+              <ion-icon name="warning"></ion-icon>
+              <!-- <ion-card-subtitle>Card Subtitle</ion-card-subtitle> -->
+            </ion-card-header>
+          
+            <ion-card-content>
+              <ion-item style="padding: 10px;">
+                <ion-label position="floating">Cliente:</ion-label>
+                <ion-input type="text"  value="{{ item.nombre }}"></ion-input>
+              </ion-item>
+              <ion-item style="padding: 10px;">
+                <ion-label position="floating">Calle 1</ion-label>
+                <ion-input type="text" value="{{ item.calle1 }}"></ion-input>
+              </ion-item>
+              <ion-item style="padding: 10px;">
+                <ion-label position="floating">Calle 2</ion-label>
+                <ion-input type="text" value="{{ item.calle2 }}"></ion-input>
+              </ion-item>
+              <ion-item style="padding: 10px;">
+                <ion-label position="floating">Numero de Calle</ion-label>
+                <ion-input type="text" value="{{ item.numeroDeCalle }}"></ion-input>
+              </ion-item>
 
-        <ion-col size="12" class="ion-text-center">
-          <ion-item style="padding: 10px;">
-            <ion-label>Nueva Alerta!</ion-label>
-            <ion-button class="ion-text-center" color="warning" slot="end" style="margin-top: 5px;" (click)="loadComponente('perfil')">
-              <ion-icon name="warning" slot=""></ion-icon>
-            </ion-button>
-          </ion-item>
+              <div *ngIf="item.hora">
+                <ion-item style="padding: 10px;">
+                  <ion-label position="floating">Hora</ion-label>
+                  <ion-input type="text" value="{{ item.hora }}"></ion-input>
+                </ion-item>
+              </div>
+
+              <div *ngIf="!item.hora">
+                <ion-item style="padding: 10px;">
+                  <ion-label position="floating">Hora</ion-label>
+                  <ion-input type="text" value="{{ item.horaNow }}"></ion-input>
+                </ion-item>
+              </div>
+
+            </ion-card-content>
+          
+            <ion-button fill="clear" (click)="aceptarCarrera(item.id)">Tomar</ion-button>
+            <ion-button fill="clear" (click)="eliminarDatos(item.id)">Eliminar</ion-button>
+          </ion-card>
         </ion-col>
 
         <ion-col size="12" class="ion-text-center">
