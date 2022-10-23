@@ -24,7 +24,7 @@ export class ClienteComponent implements OnInit {
       password: this.password
     }
     this.service.registerUsers(user, user.email, user.password);
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/map');
   }
   
   ngOnInit() { 

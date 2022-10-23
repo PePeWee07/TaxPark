@@ -41,8 +41,11 @@ export class RequestPage implements OnInit {
     }
     //redireccion
     this.router.navigateByUrl('/taxi-view');
+    //nombre capturado
+    auth.onAuthStateChanged((user) => {
+      return (this.hiddenHour == 1) ? this.service.registerSolicitud(solicito1, user.displayName) : this.service.registerSolicitud(solicito2,user.displayName)
+    });
     //condicion ternaria
-    return (this.hiddenHour == 1) ? this.service.registerSolicitud(solicito1, this.nombre) : this.service.registerSolicitud(solicito2, this.nombre)
   }
 
   showhour(){
@@ -57,13 +60,17 @@ export class RequestPage implements OnInit {
     }
   }
 
+
   ngOnInit() {
     var today = new Date();
     this.timeNow = today.toLocaleTimeString();
 
     auth.onAuthStateChanged((user) => {
-      return (user) ? this.nombre = user.displayName : console.log('Sin logueo');
+      return(user.photoURL != 'cliente') ? this.router.navigateByUrl('/lobby') : null 
     });
   }
 
+
 }
+
+

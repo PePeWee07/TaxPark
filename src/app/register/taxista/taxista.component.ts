@@ -28,7 +28,7 @@ export class TaxistaComponent implements OnInit {
       password: this.password
     }
     this.service.registerTaxis(taxi, taxi.email, taxi.password);
-    this.router.navigateByUrl('/login');
+    this.router.navigateByUrl('/map');
   }
 
   ngOnInit() {}

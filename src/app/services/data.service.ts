@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { db, auth } from 'src/environments/environment';
 import { Injectable } from '@angular/core';
 import Usuario from '../interface/usuario';
@@ -10,7 +11,7 @@ import Solicitar from '../interface/solicitar';
 })
 export class DataService {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   // Metodo guardar usuario
   async registerUsers(cliente: Usuario, email:string, password: string){
@@ -27,8 +28,12 @@ export class DataService {
       // registro en AUTH
       auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        var user = userCredential.additionalUserInfo;
-        return userCredential.user.updateProfile({ displayName: cliente.nombre + ' ' + cliente.apellido})
+        var userInfo = userCredential.additionalUserInfo;
+        var userCredentials = userCredential.credential;
+        console.log('userInfo: ', userInfo);
+        console.log('userCredentials: ', userCredentials);
+        this.router.navigateByUrl('/request')
+        return userCredential.user.updateProfile({ displayName: cliente.nombre + ' ' + cliente.apellido, photoURL: 'cliente'})
       }).catch((error) => {
       alert('No se pudo guardar las credenciales')
       console.log('CODE ERROR: ', error.code);
@@ -56,7 +61,7 @@ export class DataService {
       // registro en AUTH
       auth.createUserWithEmailAndPassword(email, password)
       .then((userCredential) => {
-        return userCredential.user.updateProfile({ displayName: taxista.nombre + ' ' + taxista.apellido})
+        return userCredential.user.updateProfile({ displayName: taxista.nombre + ' ' + taxista.apellido, photoURL: 'taxista'})
         var user = userCredential.user;
       })
     .catch((error) => {

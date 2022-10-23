@@ -23,7 +23,15 @@ export class LobbyPage implements OnInit {
     auth.signOut().then(() => this.router.navigateByUrl('/login'))
   }
 
+  validar: string;
+  validacion(){
+    auth.onAuthStateChanged((user) => {
+      return (user) ? this.validar = user.photoURL : console.log('Sin logueo');
+    });
+  }
+
   ngOnInit() {
+    this.validacion();
   }
 
 }

@@ -66,18 +66,17 @@ export class ClientViewPage implements OnInit {
         console.error("Error removing document: ", error);
     });
   }
-
-
-
   cliente: any;
   calle1: any;
   calle2:any;
   hora:any;
 
+
   ngOnInit() {
     this.obtenerDatos();
+
     auth.onAuthStateChanged((user) => {
-      return (user) ? console.log(user.displayName): console.log('Sin logueo');
+      return(user.photoURL != 'taxista') ? this.router.navigateByUrl('/lobby') : null 
     });
   }
 }
