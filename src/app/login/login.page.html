@@ -16,15 +16,15 @@
         <ion-col size="12">
           <ion-item style="padding: 10px;">
             <ion-label position="floating">Email</ion-label>
-            <ion-input type="email"></ion-input>
+            <ion-input type="email" [(ngModel)]="email"></ion-input>
           </ion-item>
           <ion-item style="padding: 10px;">
             <ion-label position="floating">Password</ion-label>
-            <ion-input type="password"></ion-input>
+            <ion-input type="password" [(ngModel)]="password"></ion-input>
           </ion-item>
         </ion-col>
         <ion-col size="12" class="ion-text-center">
-          <ion-button color="" shape="round">Entrar</ion-button>
+          <ion-button color="" shape="round" (click)="login()">Entrar</ion-button>
         </ion-col>
         <ion-col size="12" class="ion-text-center">
           <a href="/register">crear cuenta</a>

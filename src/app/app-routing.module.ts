@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { VigilanteGuard } from './guard/vigilante.guard';
 
 const routes: Routes = [
   {
@@ -9,12 +10,9 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
-  },
-  {
     path: 'map',
-    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule)
+    loadChildren: () => import('./map/map.module').then( m => m.MapPageModule),
+    canActivate: [VigilanteGuard]
   },
   {
     path: 'lobby',
@@ -30,15 +28,18 @@ const routes: Routes = [
   },
   {
     path: 'request',
-    loadChildren: () => import('./request/request.module').then( m => m.RequestPageModule)
+    loadChildren: () => import('./request/request.module').then( m => m.RequestPageModule),
+    canActivate: [VigilanteGuard]
   },
   {
     path: 'client-view',
-    loadChildren: () => import('./client-view/client-view.module').then( m => m.ClientViewPageModule)
+    loadChildren: () => import('./client-view/client-view.module').then( m => m.ClientViewPageModule),
+    canActivate: [VigilanteGuard]
   },
   {
     path: 'taxi-view',
-    loadChildren: () => import('./taxi-view/taxi-view.module').then( m => m.TaxiViewPageModule)
+    loadChildren: () => import('./taxi-view/taxi-view.module').then( m => m.TaxiViewPageModule),
+    canActivate: [VigilanteGuard]
   }
 ];
 

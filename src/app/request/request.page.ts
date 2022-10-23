@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from "@angular/router";
+import { auth } from 'src/environments/environment';
+import { DataService } from '../services/data.service';
 
 @Component({
   selector: 'app-request',
@@ -8,31 +10,60 @@ import { Router } from "@angular/router";
 })
 export class RequestPage implements OnInit {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private service: DataService) { }
 
-  timeNow: string;
+  //1 = Select
+  //2 = Now
   hiddenHour: number = 1;
+
+  nombre:string;
+  calle1: any;
+  calle2: any;
+  numeroDeCalle: any;
+  hora: any = '00:00 Am';
+  timeNow: any;
+
+  solicitarRegister(){
+    const solicito1 = {
+      calle1: this.calle1,
+      calle2: this.calle2,
+      numeroDeCalle: this.numeroDeCalle,
+      hora: this.hora,
+      // horaNow: this.timeNow
+    }
+
+    const solicito2 = {
+      calle1: this.calle1,
+      calle2: this.calle2,
+      numeroDeCalle: this.numeroDeCalle,
+      // hora: this.hora,
+      horaNow: this.timeNow
+    }
+    //redireccion
+    this.router.navigateByUrl('/taxi-view');
+    //condicion ternaria
+    return (this.hiddenHour == 1) ? this.service.registerSolicitud(solicito1, this.nombre) : this.service.registerSolicitud(solicito2, this.nombre)
+  }
 
   showhour(){
     if(this.hiddenHour = 1){
       return this.hiddenHour = 2;
     }
   }
+
   showhour2(){
     if(this.hiddenHour = 2){
       return this.hiddenHour = 1;
     }
   }
 
-  go() {
-    this.router.navigateByUrl('/taxi-view');
-  }
-
   ngOnInit() {
-    // crea un nuevo objeto `Date`
     var today = new Date();
     this.timeNow = today.toLocaleTimeString();
-    console.log(this.timeNow);
+
+    auth.onAuthStateChanged((user) => {
+      return (user) ? this.nombre = user.displayName : console.log('Sin logueo');
+    });
   }
 
 }

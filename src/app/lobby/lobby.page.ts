@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { auth } from 'src/environments/environment';
+
 
 @Component({
   selector: 'app-lobby',
@@ -15,6 +17,10 @@ export class LobbyPage implements OnInit {
   }
   go2() {
     this.router.navigateByUrl('/register');
+  }
+
+  logout(){
+    auth.signOut().then(() => this.router.navigateByUrl('/login'))
   }
 
   ngOnInit() {

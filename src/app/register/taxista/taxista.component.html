@@ -14,31 +14,31 @@
       <ion-col>
         <ion-item style="padding: 10px;">
           <ion-label position="floating">Nombre</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="nombre"></ion-input>
         </ion-item>
         <ion-item style="padding: 10px;">
           <ion-label position="floating">Apellido</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="apellido"></ion-input>
         </ion-item>
         <ion-item style="padding: 10px;">
           <ion-label position="floating">Marca de coche</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="marcaDeCoche"></ion-input>
         </ion-item>
         <ion-item style="padding: 10px;">
           <ion-label position="floating">Matricula</ion-label>
-          <ion-input type="text"></ion-input>
+          <ion-input type="text" [(ngModel)]="matricula"></ion-input>
         </ion-item>
         <ion-item style="padding: 10px;">
           <ion-label position="floating">Email</ion-label>
-          <ion-input type="email"></ion-input>
+          <ion-input type="email" [(ngModel)]="email"></ion-input>
         </ion-item>
         <ion-item style="padding: 10px;">
           <ion-label position="floating">Password</ion-label>
-          <ion-input type="password"></ion-input>
+          <ion-input type="password"  [(ngModel)]="password"></ion-input>
         </ion-item>
       </ion-col>
       <ion-col size="12">
-        <ion-button shape="round">Crear</ion-button>
+        <ion-button shape="round" (click)="newtaxista()">Crear</ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
