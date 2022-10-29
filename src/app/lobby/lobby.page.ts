@@ -17,6 +17,7 @@ export class LobbyPage implements OnInit {
   go() {
     this.router.navigateByUrl('/login');
   }
+  
   go2() {
     this.router.navigateByUrl('/register');
   }

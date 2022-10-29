@@ -75,7 +75,7 @@ export class MapPage implements OnInit {
       } catch (err) {
         console.log('ERROR: ',err);
       }
-    },4000)
+    },6000)
   }
 
   //metodo para markar mi ubicacion (cliente)
@@ -153,15 +153,15 @@ export class MapPage implements OnInit {
   async MarkTaxis(){
     try {
       const marksTaxi : Marker[] = [
-        {
-          coordinate: {
-            lat: parseFloat(this.latitud),
-            lng: parseFloat(this.longitud)
-          },
-          title: 'Taxis: ' + String(this.numTax),
-          iconUrl: '../../assets/icon/taxi.png',
-          draggable: true,
-        },
+        // {
+        //   coordinate: {
+        //     lat: parseFloat(this.latitud),
+        //     lng: parseFloat(this.longitud)
+        //   },
+        //   title: 'Taxis: ' + String(this.numTax),
+        //   iconUrl: '../../assets/icon/taxi.png',
+        //   draggable: true,
+        // },
         {
           coordinate: {
             lat: 41.54246192157841,

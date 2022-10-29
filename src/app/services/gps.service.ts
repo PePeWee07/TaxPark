@@ -7,6 +7,8 @@ import { Geolocation } from "@capacitor/geolocation";
 export class GpsService {
 
   constructor() { }
+
+  // me ayuda a obtener la geolocalicion
    geolocation = async () => {
     const coordinates = await Geolocation.getCurrentPosition();
     console.log('Current position:', coordinates.coords);

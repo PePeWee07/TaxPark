@@ -20,6 +20,7 @@ export class ClientViewPage implements OnInit {
 
   constructor(private componentFactoryResolver: ComponentFactoryResolver, private router: Router) {}
 
+  //No estoy ocupando este metodo
   loadComponente(componente: string) {
     this.container.remove();
     let componentFactory;
@@ -31,6 +32,7 @@ export class ClientViewPage implements OnInit {
     const component = this.container.createComponent(componentFactory);
   }
 
+  
   datosFicha: any[] = [];
   obtenerDatos() {
     db.collection('Request')
