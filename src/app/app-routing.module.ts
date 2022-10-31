@@ -20,7 +20,7 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('./Iniciar sesion/login.module').then( m => m.LoginPageModule)
+    loadChildren: () => import('./iniciar sesion/login.module').then( m => m.LoginPageModule)
   },
   {
     path: 'register',
