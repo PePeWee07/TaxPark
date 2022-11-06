@@ -36,44 +36,46 @@ export class MapPage implements OnInit {
 
   //metodo para crear mapa
   async createMap(){
-    try {
-      //si es cliente marca mapa de taxis si es taxista marca cliente
-      auth.onAuthStateChanged(async (user) => {
-        if (user.photoURL === 'cliente') {
-          this.newMap = await GoogleMap.create({
-            id: 'my-map',
-            apiKey: environment.mapsKey,
-            forceCreate: true,
-            element: this.mapRef.nativeElement,
-            config:{
-              center:{
-                lat: parseFloat(this.latitud),
-                lng: parseFloat(this.longitud)
-              },
-              zoom: 15,
-            }
-          })
-          await this.createMark(), this.MarkTaxis();
-        }else {
-          this.newMap = await GoogleMap.create({
-            id: 'my-map',
-            apiKey: environment.mapsKey,
-            forceCreate: true,
-            element: this.mapRef.nativeElement,
-            config:{
-              center:{
-                lat: parseFloat(this.latitud),
-                lng: parseFloat(this.longitud)
-              },
-              zoom: 15,
-            }
-          })
-          await this.myTaxiMark(), this.myclienteMark();
-        }
-      });
-    } catch (err) {
-      console.log('ERROR: ',err);
-    }
+    setTimeout(() => {
+      try {
+        //si es cliente marca mapa de taxis si es taxista marca cliente
+        auth.onAuthStateChanged(async (user) => {
+          if (user.photoURL === 'cliente') {
+            this.newMap = await GoogleMap.create({
+              id: 'my-map',
+              apiKey: environment.mapsKey,
+              forceCreate: true,
+              element: this.mapRef.nativeElement,
+              config:{
+                center:{
+                  lat: parseFloat(this.latitud),
+                  lng: parseFloat(this.longitud)
+                },
+                zoom: 15,
+              }
+            })
+            await this.createMark(), this.MarkTaxis();
+          }else {
+            this.newMap = await GoogleMap.create({
+              id: 'my-map',
+              apiKey: environment.mapsKey,
+              forceCreate: true,
+              element: this.mapRef.nativeElement,
+              config:{
+                center:{
+                  lat: parseFloat(this.latitud),
+                  lng: parseFloat(this.longitud)
+                },
+                zoom: 15,
+              }
+            })
+            await this.myTaxiMark(), this.myclienteMark();
+          }
+        });
+      } catch (err) {
+        console.log('ERROR: ',err);
+      }
+    },6000)
   }
 
   //metodo para markar mi ubicacion (cliente)
@@ -151,15 +153,15 @@ export class MapPage implements OnInit {
   async MarkTaxis(){
     try {
       const marksTaxi : Marker[] = [
-        {
-          coordinate: {
-            lat: parseFloat(this.latitud),
-            lng: parseFloat(this.longitud)
-          },
-          title: 'Taxis: ' + String(this.numTax),
-          iconUrl: '../../assets/icon/taxi.png',
-          draggable: true,
-        },
+        // {
+        //   coordinate: {
+        //     lat: parseFloat(this.latitud),
+        //     lng: parseFloat(this.longitud)
+        //   },
+        //   title: 'Taxis: ' + String(this.numTax),
+        //   iconUrl: '../../assets/icon/taxi.png',
+        //   draggable: true,
+        // },
         {
           coordinate: {
             lat: 41.54246192157841,
@@ -272,17 +274,15 @@ export class MapPage implements OnInit {
     }
   }
 
-
   //Elimino la vista del mapa
   async Destroy(){
     await this.newMap.destroy();
   }
-
-
   
   ngOnInit() {
     this.Geolocation();
     this.NumberParking();
+    this.createMap();
   }
 
 }

@@ -10,11 +10,14 @@ import { auth } from 'src/environments/environment';
 })
 export class LobbyPage implements OnInit {
 
+  show: boolean = false;
+
   constructor(private router: Router) { }
 
   go() {
     this.router.navigateByUrl('/login');
   }
+  
   go2() {
     this.router.navigateByUrl('/register');
   }
@@ -26,7 +29,7 @@ export class LobbyPage implements OnInit {
   validar: string;
   validacion(){
     auth.onAuthStateChanged((user) => {
-      return (user) ? this.validar = user.photoURL : console.log('Sin logueo');
+      return (user) ? this.show = true : console.log('Sin logueo');
     });
   }
 

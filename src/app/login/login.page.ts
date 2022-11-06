@@ -8,7 +8,7 @@ import { auth } from 'src/environments/environment';
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
 })
-export class LoginPage implements OnInit {
+export class loginPage implements OnInit {
 
   constructor(private service: DataService, private router: Router) { }
 
@@ -16,7 +16,7 @@ export class LoginPage implements OnInit {
   password:string;
 
   login(){
-    this.service.loginUsers(this.email, this.password);
+    this.service. loginUsers (this.email, this.password);
     this.router.navigateByUrl('/request')
   }
 

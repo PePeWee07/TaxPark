@@ -26,7 +26,7 @@ export class RequestPage implements OnInit {
   solicitarRegister(){
     const solicito1 = {
       calle1: this.calle1,
-      calle2: this.calle2,
+      // calle2: this.calle2,
       numeroDeCalle: this.numeroDeCalle,
       hora: this.hora,
       // horaNow: this.timeNow
@@ -34,7 +34,7 @@ export class RequestPage implements OnInit {
 
     const solicito2 = {
       calle1: this.calle1,
-      calle2: this.calle2,
+      // calle2: this.calle2,
       numeroDeCalle: this.numeroDeCalle,
       // hora: this.hora,
       horaNow: this.timeNow
